@@ -1,30 +1,85 @@
-.sign-up-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+body {
+  background-color: #121212;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+  overflow: hidden;
+}
+
+.card {
+  background-color: #181818;
+  padding: 100px;
+  border-radius: 10px;
+
+}
+
+.card h1 {
   font-family: 'JetBrains Mono', monospace;
   color: white;
 }
 
-.sign-up-form label {
-  font-size: 0.9rem;
-  margin-bottom: -10px;
+.sign-up-form {
+  display: flex;              /* turn on flexbox */
+  flex-direction: column;     /* stack items vertically */
+  align-items: center;        /* center horizontally */
+  gap: 100 px;                  /* space between inputs/button */
+  font-family: 'JetBrains Mono', monospace;
+  color: white;
 }
 
 .sign-up-form input {
+  width: 100%;                /* make inputs stretch evenly */
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #404040;
   background-color: #121212;
   color: white;
+}
+
+.sign-up-form input::placeholder {
   font-family: 'JetBrains Mono', monospace;
 }
 
 .sign-up-form input:focus {
   outline: 2px solid #f8c555;
+  background-color: #1a1a1a;
 }
 
-.sign-up-form button {
-  margin-top: 20px;
-  width: 100%;
+.sign-up-form label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  align-self: flex-start;/* keep labels left-aligned even in centered form */
+}
+
+.sign-up-form label[for="username"] {
+  color: #cc99cd;
+}
+
+.sign-up-form label[for="email"] {
+  color: #f8c555;
+}
+
+.sign-up-form label[for="password"] {
+  color: #00bfa6;
+}
+
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+button {
+  display: inline-block;
+  padding: 15px 32px;
+  border-radius: 10px;
+  background-color: #181818;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border: none;
 }
