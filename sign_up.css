@@ -1,0 +1,30 @@
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: 'JetBrains Mono', monospace;
+  color: white;
+}
+
+.sign-up-form label {
+  font-size: 0.9rem;
+  margin-bottom: -10px;
+}
+
+.sign-up-form input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #404040;
+  background-color: #121212;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.sign-up-form input:focus {
+  outline: 2px solid #f8c555;
+}
+
+.sign-up-form button {
+  margin-top: 20px;
+  width: 100%;
+}
