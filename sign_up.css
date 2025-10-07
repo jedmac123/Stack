@@ -8,24 +8,26 @@ body {
 }
 
 .card {
-  background-color: #181818;
-  padding: 100px;
+  margin-top: 100px;
+  background-color: rgba(35, 35, 35, 0.7); 
+  backdrop-filter: blur(100px); 
+  padding: 10px 80px 80px 80px;
   border-radius: 10px;
-
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
 }
 
 .card h1 {
   font-family: 'JetBrains Mono', monospace;
-  color: white;
+  color: #ededed;
 }
 
-.sign-up-form {
-  display: flex;              /* turn on flexbox */
-  flex-direction: column;     /* stack items vertically */
-  align-items: center;        /* center horizontally */
-  gap: 100 px;                  /* space between inputs/button */
-  font-family: 'JetBrains Mono', monospace;
-  color: white;
+.username-input,
+.email-input,
+.password-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
 }
 
 .sign-up-form input {
@@ -33,17 +35,21 @@ body {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #404040;
-  background-color: #121212;
+  background-color: #181818;
   color: white;
+
 }
 
-.sign-up-form input::placeholder {
-  font-family: 'JetBrains Mono', monospace;
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
-
 .sign-up-form input:focus {
   outline: 2px solid #f8c555;
   background-color: #1a1a1a;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
 }
 
 .sign-up-form label {
@@ -64,7 +70,6 @@ body {
   color: #00bfa6;
 }
 
-
 .hero {
   display: flex;
   justify-content: center;
@@ -82,4 +87,15 @@ button {
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   border: none;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+
+}
+
+
+.login {
+  font-size: 15px;
 }
