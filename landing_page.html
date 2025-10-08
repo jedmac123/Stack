@@ -1,78 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stack – Smart Flashcards for CS Majors</title>
-  <link rel="stylesheet" href = "landing_page.css">
+  <link rel="stylesheet" href="landing_page.css">
   <link rel="icon" type="image/x-icon" href="stack_logo.png">
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
-<!-- Prism JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+  <!-- Prism JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
 </head>
 
 <body>
-<header class = "sticky">
+  <!---- HEADER Section ---->
+  <header class="sticky">
     <div class="logo">
       <a href="index.html">
-      <img src="stack_logo.png" alt="Stack Logo" class="logo_image">
+        <img src="stack_logo.png" alt="Stack Logo" class="logo_image">
       </a>
       <span class="app_name">Stack</span>
     </div>
-    <button class="btn-nav"> 
+    <button class="btn-nav">
       <span class="btn-text">login()</span>
     </button>
-</header>
+  </header>
 
-    <!---- Hero Section ---->
+  <!---- Hero Section ---->
   <div class="hero">
-    <div class = "card">
-<p><pre><code class="language-java">public class Hello {
+    <div class="card">
+      <p><pre><code class="language-java">public class Hello {
   public static void main(String[] args) {
     System.out.println("Welcome to Stack!");
   }
 }
 </p></code></pre>
     </div>
-    <div class = "hero_text">
-      <h1><span class="keyword">Flashcards</span> that speak <span class="name">your</span> <span class="string">language.</span></h1>
-    </div> 
+    <div class="hero_text">
+      <h1><span class="keyword">Flashcards</span> that speak <span class="name">your</span> <span
+          class="string">language.</span></h1>
+    </div>
     <p>Not just text. Real code. Real structure. Real understanding.</p>
-    <button class="sign_up_button"><span class="btn-text">sign_up_now()</span></button>
+    <a href="sign_up.html">
+      <button class="sign_up_button"><span class="btn-text">sign_up_now()</span></button>
+    </a>
   </div>
-  <h1 class = "features_header">
-Why use Stack?
-  </h1>
-  <section class="features">
-    <div class="feat">
-      <h2>
-        Made for Code
-      </h2>
-      <p>
-Stack flashcards support cleanly formatted, syntax-highlighted code, so you can study the way developers actually think and work.
-      </p>
+  
+  <!---- Features Section ---->
+  <div class="IDE">
+    <div class="ide-header">
+      <div class="ide-dot red"></div>
+      <div class="ide-dot yellow"></div>
+      <div class="ide-dot green"></div>
     </div>
-    <div class="feat">
-      <h2>
-        Learn Faster with Visual Structure
-      </h2>
-      <p>
-From loops to data structures, see your code the way its meant to be written—with proper indentation, highlighting, and style.
-      </p>
-    </div>
-    <div class="feat">
-      <h2>
-        Built for Programmers
-      </h2>
-      <p>
-Whether you're brushing up on Java, C, or Python, Stack is tailored for devs, making it easier to focus on what really matters: the code.
-      </p>
-    </div>
-  </section>
-<footer>
-&copy;2025 Stack. All rights reserved.
-</footer>
+    <pre><code class="language-java">
+      public void flashcardsWithSyntax() {
+        // ✨ Study code the way developers read it.
+        // Every flashcard supports real syntax highlighting
+        // for dozens of languages — Java, Python, C++, and more.
+        // See clean indentation, keywords, and color patterns.
+        // Because understanding starts with readability.
+      }
+      </code></pre>
+    <pre><code class="language-c">
+      void learnVisually() {
+          // 👁️ Stop scrolling through dense tutorials.
+          // Stack’s interface turns concepts into color,
+          // structure, and spacing — helping you learn faster.
+          // Each flashcard feels like a mini code editor,
+          // where logic comes to life line by line.
+      }
+      </code></pre>
+    <pre><code class="language-python">
+      def builtForDevelopers():
+          # 🧠 Designed by CS students, for CS students.
+          # Stack focuses on what matters: clean syntax,
+          # simple navigation, and language-agnostic practice.
+          # Study Java, Python, C, HTML, SQL, and beyond —
+          # all formatted exactly like real code.
+      </code></pre>
+  </div>
+   
+  <footer>
+    &copy;2025 Stack. All rights reserved.
+  </footer>
 </body>
 </html>
