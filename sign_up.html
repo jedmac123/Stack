@@ -8,7 +8,29 @@
 <link rel="icon" type="image/x-icon" href="stack_logo.png">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
-
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Fade in when page loads
+    document.body.classList.add("fade-in");
+  
+    // Fade/slide out before navigating away
+    const links = document.querySelectorAll("a");
+    links.forEach(link => {
+      link.addEventListener("click", e => {
+        const href = link.getAttribute("href");
+        // Skip anchors or empty links
+        if (href && !href.startsWith("#") && !href.startsWith("javascript")) {
+          e.preventDefault();
+          document.body.classList.remove("fade-in");
+          document.body.style.opacity = "0";
+          document.body.style.transform = "translateY(20px)";
+          // Wait for animation to finish, then navigate
+          setTimeout(() => window.location = href, 450);
+        }
+      });
+    });
+  });
+  </script>
 <body>
 <header class="sticky">
 <div class="logo">

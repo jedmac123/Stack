@@ -9,6 +9,30 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Fade in when page loads
+    document.body.classList.add("fade-in");
+  
+    // Fade/slide out before navigating away
+    const links = document.querySelectorAll("a");
+    links.forEach(link => {
+      link.addEventListener("click", e => {
+        const href = link.getAttribute("href");
+        // Skip anchors or empty links
+        if (href && !href.startsWith("#") && !href.startsWith("javascript")) {
+          e.preventDefault();
+          document.body.classList.remove("fade-in");
+          document.body.style.opacity = "0";
+          document.body.style.transform = "translateY(20px)";
+          // Wait for animation to finish, then navigate
+          setTimeout(() => window.location = href, 450);
+        }
+      });
+    });
+  });
+  </script>
 <body>
 <header class="sticky">
 <div class="logo">
@@ -24,30 +48,24 @@
 
   <div class="card" style="max-width: 400px; width: 100%;">
 
-    <h1 style="text-align:center;">login()</h1>
-    
-    <form class="login-form">
+    <h1 style="text-align:center;">Welcome Back!</h1>
+    <form class="login_form">
       
       <div class="username-input">
         <label for="username">username:</label>
         <input type="text" id="username" autocomplete="stack_username" name="stack_username"  required>
       </div>
       
-      <div class="email-input">
-        <label for="email">email:</label>
-        <input type="email" id="email" autocomplete="stack_email" name="stack_email"  required>
-      </div>
-
       <div class="password-input">
         <label for="password">password:</label>
         <input type="password" id="password" name="stack_password" required>
       </div>
 
-      <button type="submit" class="sign_up_button">
-        <span class="btn-text">create_account()</span>
+      <button type="submit" class="log_in_button">
+        <span class="btn-text">login()</span>
       </button>
 
-      <a href="login.html" class="link">//Already have an account? login()</a>
+      <a href="sign_up.html" class="link">//Don't have an account yet? sign_up()</a>
     
     </form>
 

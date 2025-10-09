@@ -13,21 +13,47 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
 
 </head>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Fade in when page loads
+    document.body.classList.add("fade-in");
+  
+    // Fade/slide out before navigating away
+    const links = document.querySelectorAll("a");
+    links.forEach(link => {
+      link.addEventListener("click", e => {
+        const href = link.getAttribute("href");
+        // Skip anchors or empty links
+        if (href && !href.startsWith("#") && !href.startsWith("javascript")) {
+          e.preventDefault();
+          document.body.classList.remove("fade-in");
+          document.body.style.opacity = "0";
+          document.body.style.transform = "translateY(20px)";
+          // Wait for animation to finish, then navigate
+          setTimeout(() => window.location = href, 450);
+        }
+      });
+    });
+  });
+  </script>
 
 <body>
   <!---- HEADER Section ---->
   <header class="sticky">
     <div class="logo">
-      <a href="index.html">
+      <a href="landing_page.html">
         <img src="stack_logo.png" alt="Stack Logo" class="logo_image">
       </a>
       <span class="app_name">Stack</span>
     </div>
     <button class="btn-nav">
+      <a href="login.html">
       <span class="btn-text">login()</span>
+      </a>
     </button>
   </header>
 
@@ -49,6 +75,9 @@
     <a href="sign_up.html">
       <button class="sign_up_button"><span class="btn-text">sign_up_now()</span></button>
     </a>
+    <p style="color:#888; font-family:'JetBrains Mono', monospace; margin-top: -20px;",>
+      // scrollDown(); // to explore the features ↓
+    </p>
   </div>
   
   <!---- Features Section ---->
@@ -67,6 +96,7 @@
         // Because understanding starts with readability.
       }
       </code></pre>
+  
     <pre><code class="language-c">
       void learnVisually() {
           // 👁️ Stop scrolling through dense tutorials.
@@ -83,11 +113,29 @@
           # simple navigation, and language-agnostic practice.
           # Study Java, Python, C, HTML, SQL, and beyond —
           # all formatted exactly like real code.
+          pass
       </code></pre>
   </div>
    
   <footer>
     &copy;2025 Stack. All rights reserved.
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target); // prevents re-triggering once shown
+          }
+        });
+      }, { threshold: 0.1 }); // triggers when 10% of the element is visible
+    
+      const fadeInSections = document.querySelectorAll(".IDE");
+      fadeInSections.forEach((section) => observer.observe(section));
+    });
+    </script>
+    
 </body>
 </html>

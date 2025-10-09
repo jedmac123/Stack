@@ -5,6 +5,14 @@ body {
     linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
   background-size: 40px 40px;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card {
@@ -13,25 +21,6 @@ body {
   padding: 10px 80px 80px 80px;
   border-radius: 10px;
   position: relative;
-}
-
-.card::after, .card::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-image: conic-gradient( cyan, purple, red, blue, cyan );
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  z-index: -1;
-  padding: 5px;
-  border-radius: 10px;
-}
-
-.card::before {
-  filter: blur(1.5rem);
-  opacity: 0.5;
 }
 
 .card h1 {
@@ -105,6 +94,7 @@ button {
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 👈 add this */
 }
 
 button:hover {
