@@ -1,7 +1,15 @@
-body, html {
+body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 pre[class*="language-"], code[class*="language-"] {
   background: none !important;
