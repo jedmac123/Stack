@@ -13,36 +13,45 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
 
+  <style>
+    /* Add scroll snapping behavior */
+    .scroll-container {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+
+    .scroll-container section {
+      height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scroll-hint {
+      color: #888;
+      font-family: 'JetBrains Mono', monospace;
+      margin-top: -10px;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+    .scroll-hint:hover {
+      opacity: 0.7;
+    }
+  </style>
 </head>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Fade in when page loads
-    document.body.classList.add("fade-in");
-  
-    // Fade/slide out before navigating away
-    const links = document.querySelectorAll("a");
-    links.forEach(link => {
-      link.addEventListener("click", e => {
-        const href = link.getAttribute("href");
-        // Skip anchors or empty links
-        if (href && !href.startsWith("#") && !href.startsWith("javascript")) {
-          e.preventDefault();
-          document.body.classList.remove("fade-in");
-          document.body.style.opacity = "0";
-          document.body.style.transform = "translateY(20px)";
-          // Wait for animation to finish, then navigate
-          setTimeout(() => window.location = href, 450);
-        }
-      });
-    });
-  });
-  </script>
-
 <body>
-  <!---- HEADER Section ---->
+  <!-- HEADER -->
   <header class="sticky">
     <div class="logo">
       <a href="landing_page.html">
@@ -51,91 +60,129 @@
       <span class="app_name">Stack</span>
     </div>
     <button class="btn-nav">
-      <a href="login.html">
-      <span class="btn-text">login()</span>
-      </a>
+      <a href="login.html"><span class="btn-text">login()</a>
     </button>
   </header>
 
-  <!---- Hero Section ---->
-  <div class="hero">
-    <div class="card">
-      <p><pre><code class="language-java">public class Hello {
+  <!-- Scroll Snap Container -->
+  <div class="scroll-container">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="card">
+        <pre><code class="language-java">public class Hello {
   public static void main(String[] args) {
     System.out.println("Welcome to Stack!");
   }
+}</code></pre>
+      </div>
+
+      <div class="hero_text">
+        <h1><span class="keyword">Flashcards</span> that speak <span class="name">your</span> <span class="string">language.</span></h1>
+      </div>
+
+      <p>Not just text. Real code. Real structure. Real understanding.</p>
+
+      <a href="sign_up.html">
+        <button class="sign_up_button"><span class="btn-text">sign_up_now()</span></button>
+      </a>
+
+      <p class="scroll-hint">// scrollDown(); // to explore the features ↓</p>
+    </section>
+
+<!-- FEATURES SECTION -->
+<section class="features">
+  <div class="features-container">
+    <!-- Left side: IDE -->
+    <div class="IDE">
+      <div class="ide-header">
+        <div class="ide-dot red"></div>
+        <div class="ide-dot yellow"></div>
+        <div class="ide-dot green"></div>
+      </div>
+
+      <pre><code class="language-java">
+public void flashcardsWithSyntax() {
+    // ✨ Study code the way developers read it.
+    // Every flashcard supports real syntax highlighting
+    // for dozens of languages — Java, Python, C++, and more.
 }
-</p></code></pre>
+      </code></pre>
+
+      <pre><code class="language-c">
+void learnVisually() {
+    // 👁️ Stop scrolling through dense tutorials.
+    // Stack’s interface turns concepts into color,
+    // structure, and spacing — helping you learn faster.
+}
+      </code></pre>
+
+      <pre><code class="language-python">
+def builtForDevelopers():
+    # 🧠 Designed by CS students, for CS students.
+    # Study Java, Python, C, HTML, SQL, and beyond.
+    pass
+      </code></pre>
     </div>
-    <div class="hero_text">
-      <h1><span class="keyword">Flashcards</span> that speak <span class="name">your</span> <span
-          class="string">language.</span></h1>
+
+    <!-- Right side: Text / CTA -->
+    <div class="ide-cta">
+      <h1><span class="keyword">For CS Majors</span>, <br><span class="name">By CS Majors</span>.</h1>
+      <p>
+        Crafted with <span class="accent">real developers</span> in mind — Stack combines syntax, structure, and clarity to help you
+        master programming through the lens of actual code.
+      </p>
+      <button class="cta-button">learn_more()</button>
     </div>
-    <p>Not just text. Real code. Real structure. Real understanding.</p>
-    <a href="sign_up.html">
-      <button class="sign_up_button"><span class="btn-text">sign_up_now()</span></button>
-    </a>
-    <p style="color:#888; font-family:'JetBrains Mono', monospace; margin-top: -20px;",>
-      // scrollDown(); // to explore the features ↓
-    </p>
   </div>
-  
-  <!---- Features Section ---->
-  <div class="IDE">
-    <div class="ide-header">
-      <div class="ide-dot red"></div>
-      <div class="ide-dot yellow"></div>
-      <div class="ide-dot green"></div>
-    </div>
-    <pre><code class="language-java">
-      public void flashcardsWithSyntax() {
-        // ✨ Study code the way developers read it.
-        // Every flashcard supports real syntax highlighting
-        // for dozens of languages — Java, Python, C++, and more.
-        // See clean indentation, keywords, and color patterns.
-        // Because understanding starts with readability.
-      }
-      </code></pre>
-  
-    <pre><code class="language-c">
-      void learnVisually() {
-          // 👁️ Stop scrolling through dense tutorials.
-          // Stack’s interface turns concepts into color,
-          // structure, and spacing — helping you learn faster.
-          // Each flashcard feels like a mini code editor,
-          // where logic comes to life line by line.
-      }
-      </code></pre>
-    <pre><code class="language-python">
-      def builtForDevelopers():
-          # 🧠 Designed by CS students, for CS students.
-          # Stack focuses on what matters: clean syntax,
-          # simple navigation, and language-agnostic practice.
-          # Study Java, Python, C, HTML, SQL, and beyond —
-          # all formatted exactly like real code.
-          pass
-      </code></pre>
+</section>
+
+    
   </div>
-   
+
   <footer>
     &copy;2025 Stack. All rights reserved.
   </footer>
 
   <script>
+    // Fade transition between pages
     document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+
+      const links = document.querySelectorAll("a");
+      links.forEach(link => {
+        link.addEventListener("click", e => {
+          const href = link.getAttribute("href");
+          if (href && !href.startsWith("#") && !href.startsWith("javascript")) {
+            e.preventDefault();
+            document.body.classList.remove("fade-in");
+            document.body.style.opacity = "0";
+            document.body.style.transform = "translateY(20px)";
+            setTimeout(() => window.location = href, 450);
+          }
+        });
+      });
+
+      // Fade in .IDE when visible
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("show");
-            observer.unobserve(entry.target); // prevents re-triggering once shown
+            observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1 }); // triggers when 10% of the element is visible
-    
-      const fadeInSections = document.querySelectorAll(".IDE");
-      fadeInSections.forEach((section) => observer.observe(section));
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll(".IDE").forEach(section => observer.observe(section));
+
+      // Scroll hint click to next section
+      const scrollHint = document.querySelector(".scroll-hint");
+      if (scrollHint) {
+        scrollHint.addEventListener("click", () => {
+          document.querySelector(".features").scrollIntoView({ behavior: "smooth" });
+        });
+      }
     });
-    </script>
-    
+  </script>
 </body>
 </html>

@@ -84,23 +84,24 @@ body.fade-in {
   font-family: 'JetBrains Mono', monospace;
 }
 
-button {
+button{
   display: inline-block;
   padding: 15px 32px;
   border-radius: 10px;
   background-color: #181818;
-  color: white;
+  color: #f8c555;
   font-family: 'JetBrains Mono', monospace;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  border: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 👈 add this */
+  border: 1px solid #f8c555;
+  box-shadow: 0 1px 10px #404040;
+  transition: all 0.3s ease;
 }
 
 button:hover {
+  background-color: #f8c555;
+  color: #121212;
   transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
-
+  box-shadow: 0 0 15px rgba(248, 197, 85, 0.6);
 }
 
 .link {
